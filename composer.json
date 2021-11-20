@@ -1,0 +1,11 @@
+{
+    "name": "hkevin-k/feishu",
+    "description": "FeiShu PHP SDK",
+    "version": "1.0.0",
+    "license": "Apache-2.0",
+    "autoload": {
+        "psr-4": {
+            "feishu\\": "src/"
+        }
+    }
+}
