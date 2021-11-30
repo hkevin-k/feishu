@@ -150,7 +150,7 @@ class Client
                         $this->setAccessToken($key, $res[$key], time()+$res['expire']);
                     }
                 } else {
-                    throw new \Exception('Request access token error. response content: "'.json_encode($res).'"');
+                    throw new \Exception($res['msg'], $res['code']);
                 }
             }
             // 用第一个
