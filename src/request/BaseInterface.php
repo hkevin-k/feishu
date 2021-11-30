@@ -2,7 +2,7 @@
 
 namespace feishu\request;
 
-interface Base
+interface BaseInterface
 {
     public function check();
 

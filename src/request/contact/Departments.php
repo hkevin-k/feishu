@@ -2,18 +2,17 @@
 
 namespace feishu\request\contact;
 
-use feishu\request\Base;
+use feishu\request\BaseClass;
+use feishu\request\BaseInterface;
 
 use feishu\top\RequestCheckUtil;
 
 /**
  * 获取部门信息列表
  */
-class Departments implements Base
+class Departments extends BaseClass implements BaseInterface
 {
     public $url = '/contact/v3/departments';
-
-    public $api_paras = [];
 
     public $method = 'GET';
 
@@ -119,10 +118,5 @@ class Departments implements Base
     public function check()
     {
         RequestCheckUtil::checkMaxValue($this->page_size, 50, 'page_size');
-    }
-
-    public function getApiParas()
-    {
-        return $this->api_paras;
     }
 }

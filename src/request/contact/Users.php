@@ -2,18 +2,17 @@
 
 namespace feishu\request\contact;
 
-use feishu\request\Base;
+use feishu\request\BaseClass;
+use feishu\request\BaseInterface;
 
 use feishu\top\RequestCheckUtil;
 
 /**
  * 获取用户列表
  */
-class Users implements Base
+class Users extends BaseClass implements BaseInterface
 {
     public $url = '/contact/v3/users';
-
-    public $api_paras = [];
 
     public $method = 'GET';
 
@@ -102,9 +101,5 @@ class Users implements Base
 
     public function check() {
         RequestCheckUtil::checkMaxValue($this->page_size, 100, 'page_size');
-    }
-
-    public function getApiParas() {
-        return $this->api_paras;
     }
 }

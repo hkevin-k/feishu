@@ -2,18 +2,17 @@
 
 namespace feishu\request\authen;
 
-use feishu\request\Base;
+use feishu\request\BaseClass;
+use feishu\request\BaseInterface;
 
 use feishu\top\RequestCheckUtil;
 
 /**
  * 获取登录用户身份
  */
-class AccessToken implements Base
+class AccessToken extends BaseClass implements BaseInterface
 {
     public $url = '/authen/v1/access_token';
-
-    public $api_paras = [];
 
     /**
      * @var string

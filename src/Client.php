@@ -69,7 +69,7 @@ class Client
      * @throws \Exception
      */
     private function curl($request, $access_token) {
-        $url = $this->domain . $request->url;
+        $url = $this->domain . $request->getUrl();
         $ch = curl_init();
 
         $httpheader = [
@@ -175,8 +175,6 @@ class Client
         return array_filter($access_token_info, function ($info) {
             if (
                 empty($info['token'])
-                ||
-                $info['expire'] === 0
                 ||
                 (time() >= $info['expire_time'])
             ) {

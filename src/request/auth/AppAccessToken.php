@@ -2,18 +2,17 @@
 
 namespace feishu\request\auth;
 
-use feishu\request\Base;
+use feishu\request\BaseClass;
+use feishu\request\BaseInterface;
 
 use feishu\top\RequestCheckUtil;
 
 /**
  * 获取用户信息
  */
-class AppAccessTokenInternal implements Base
+class AppAccessToken extends BaseClass implements BaseInterface
 {
     public $url = '/auth/v3/app_access_token/internal';
-
-    public $api_paras = [];
 
     public $method = 'POST';
 
@@ -49,10 +48,5 @@ class AppAccessTokenInternal implements Base
     {
         RequestCheckUtil::checkNotNull($this->app_id, 'app_id');
         RequestCheckUtil::checkNotNull($this->app_secret, 'app_secret');
-    }
-
-    public function getApiParas()
-    {
-        return $this->api_paras;
     }
 }
