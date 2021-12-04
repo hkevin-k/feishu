@@ -140,7 +140,7 @@ class Client
             $access_token_info = $this->getValidAccessTokenInfo($access_token_type);
             if (empty($access_token_info)) {
                 // 请求token
-                $request = new \feishu\request\auth\AppAccessTokenInternal();
+                $request = new \feishu\request\auth\AppAccessToken();
                 $request->setAppId($this->app_id);
                 $request->setAppSecret($this->app_secret);
                 $res = $this->execute($request);
