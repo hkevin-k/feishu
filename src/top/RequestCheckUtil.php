@@ -105,5 +105,9 @@ class RequestCheckUtil
 		return false;
 	}
 
+	public static function checkArray($value, $fieldName) {
+        if($value !== null && !is_array($value))
+            throw new \Exception("client-check-error:Invalid Arguments:the value of " . $fieldName . " is not array." , 41);
+    }
 }
 ?>

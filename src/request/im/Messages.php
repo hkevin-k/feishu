@@ -8,7 +8,7 @@ use feishu\request\BaseClass;
 use feishu\top\RequestCheckUtil;
 
 /**
- * 获取部门信息列表
+ * 发送消息
  */
 class Messages extends BaseClass implements BaseInterface
 {
